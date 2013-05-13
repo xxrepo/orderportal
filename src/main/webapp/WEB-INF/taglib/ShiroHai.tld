@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taglib> 
+	<tlibversion>1.0</tlibversion>
+	<jspversion>1.1</jspversion>
+	<shortname>ShiroHai</shortname>
+	<info>A couple custom Apache Shiro tags</info>
+	<tag>
+	    <name>userId</name>
+	    <tagclass>org.aigua.taglib.ShiroHaiUserId</tagclass>
+	    <info>Outputs the logged in Shiro Hai User Id.</info>
+	</tag>
+	<tag>
+	    <name>name</name>
+	    <tagclass>org.aigua.taglib.ShiroHaiName</tagclass>
+	    <info>Outputs the logged in Shiro Hai User Name.</info>
+	</tag>
+	<tag>
+	    <name>email</name>
+	    <tagclass>org.aigua.taglib.ShiroHaiEmail</tagclass>
+	    <info>Outputs the logged in Shiro Hai User Email.</info>
+	</tag>		
+</taglib>

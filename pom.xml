@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 				
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  
+	<modelVersion>4.0.0</modelVersion>
+	
+	<groupId>org.aigua</groupId>
+	<artifactId>shiro_hai</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<packaging>war</packaging>
+	
+	
+	<properties>
+	    <junit.version>4.8.2</junit.version>
+		<log4j.version>1.2.17</log4j.version>
+	    <spring.version>3.2.2.RELEASE</spring.version>
+		<google.gson.version>2.2.2</google.gson.version>
+		<jackson.json.version>1.9.12</jackson.json.version>
+		<jetty.version>7.6.4.v20120524</jetty.version>
+		<mavenexec.version>1.2.1</mavenexec.version>
+		<servlet.api.version>2.5</servlet.api.version>
+		<slf4j.version>1.6.1</slf4j.version>
+		<jstl.version>1.2</jstl.version>
+		<sitemesh.version>3.0-alpha-2</sitemesh.version>
+		<shiro.version>1.2.1</shiro.version>
+		<cglib.version>2.2.2</cglib.version>
+		<aspectj.version>1.6.12</aspectj.version>
+		<aspectjrt.version>1.6.11</aspectjrt.version>
+		<postgresql.version>9.1-901.jdbc4</postgresql.version>
+		<commons.validator.version>1.4.0</commons.validator.version>
+		<jsp.api.version>2.0</jsp.api.version>
+	</properties>
+
+	
+	<dependencies>	
+	
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit.version}</version>
+			<scope>test</scope>
+		</dependency>
+	
+      	<dependency>
+      	  	<groupId>jspapi</groupId>
+      	  	<artifactId>jsp-api</artifactId>
+      	  	<version>${jsp.api.version}</version>
+      	</dependency>
+		
+		<dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-core-asl</artifactId>
+			<version>${jackson.json.version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-mapper-asl</artifactId>
+			<version>${jackson.json.version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>${servlet.api.version}</version>
+		</dependency>		
+		
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>${slf4j.version}</version>
+        </dependency>
+
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>${log4j.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>jstl</groupId>
+			<artifactId>jstl</artifactId>
+			<version>${jstl.version}</version>
+		</dependency>
+	
+		<dependency>
+			<groupId>org.sitemesh</groupId>
+			<artifactId>sitemesh</artifactId>
+			<version>${sitemesh.version}</version>
+		</dependency>
+			
+		<dependency>
+			<groupId>commons-validator</groupId>
+			<artifactId>commons-validator</artifactId>
+			<version>${commons.validator.version}</version>
+		</dependency>
+        
+		<dependency>
+			<groupId>org.apache.shiro</groupId>
+			<artifactId>shiro-core</artifactId>
+			<version>${shiro.version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.apache.shiro</groupId>
+			<artifactId>shiro-web</artifactId>
+			<version>${shiro.version}</version>
+		</dependency>
+		
+	    <dependency>
+	       <groupId>org.apache.shiro</groupId>
+	       <artifactId>shiro-spring</artifactId>
+	       <version>${shiro.version}</version>
+	     </dependency>
+		
+		<dependency>
+		    <groupId>org.aspectj</groupId>
+		    <artifactId>aspectjrt</artifactId>
+		    <version>${aspectjrt.version}</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>org.aspectj</groupId>
+		    <artifactId>aspectjweaver</artifactId>
+		    <version>${aspectj.version}</version>
+		</dependency>    
+		
+		<dependency>
+		    <groupId>cglib</groupId>
+		    <artifactId>cglib</artifactId>
+		    <version>${cglib.version}</version>
+		</dependency>			
+		
+		<dependency>
+			<groupId>postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>${postgresql.version}</version>
+		</dependency>
+			
+		
+		<!-- Spring framework -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+	
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+	
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-web</artifactId>
+		    <version>${spring.version}</version>
+		</dependency>
+				          
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>org.springframework.data</groupId>
+		 	<artifactId>spring-data-jdbc-core</artifactId>
+		 	<version>1.0.0.RELEASE</version>
+		</dependency>
+
+			
+	</dependencies>
+	
+	
+	
+  	<build>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+			</resource>
+		</resources>
+  	  	<plugins>
+  	  		<plugin>
+                <groupId>org.mortbay.jetty</groupId>
+                <artifactId>jetty-maven-plugin</artifactId>
+                <configuration>
+                    <scanIntervalSeconds>15</scanIntervalSeconds>
+                    <webAppConfig>
+                        <contextPath>/shiro_hai</contextPath>
+                    </webAppConfig>			
+                </configuration>
+			</plugin>
+  	  	</plugins>
+  	</build>
+	
+</project>

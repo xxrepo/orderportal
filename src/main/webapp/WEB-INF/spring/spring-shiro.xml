@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/context
+	      http://www.springframework.org/schema/context/spring-context-3.0.xsd
+	      http://www.springframework.org/schema/beans
+	      http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	
+		
+	<bean id="hashedCredentialsMatcher" class="org.apache.shiro.authc.credential.Sha256CredentialsMatcher">
+		<!-- <property name="hashIterations" value="1024"/>
+		<property name="storedCredentialsHexEncoded" value="false"/>
+		<property name="hashSalted" value="true"/> -->
+	</bean>
+	
+	
+	<bean id="shiroRealm" class="org.aigua.realm.ShiroHaiRealm">
+		<!-- <property name="credentialsMatcher" ref="hashedCredentialsMatcher"/>	  -->
+	</bean>
+	
+	<!-- <bean id="shiroRealm" class="org.apache.shiro.realm.jdbc.JdbcRealm">
+		<property name="credentialsMatcher" ref="hashedCredentialsMatcher"/>	
+	</bean> -->
+	
+	<bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
+	    <property name="realm" ref="shiroRealm"/>
+	</bean>
+	
+	
+	<bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
+	    <property name="securityManager" ref="securityManager"/>
+	    <!-- override these for application-specific URLs if you like:-->
+	    <property name="loginUrl" value="/login.jsp"/>
+	    <property name="successUrl" value="/home.jsp"/>
+	    <property name="unauthorizedUrl" value="/unauthorized.jsp"/> 
+	    <!-- The 'filters' property is not necessary since any declared javax.servlet.Filter bean  -->
+	    <!-- defined will be automatically acquired and available via its beanName in chain        -->
+	    <!-- definitions, but you can perform instance overrides or name aliases here if you like: -->
+	    <!-- <property name="filters">
+	        <util:map>
+	            <entry key="anAlias" value-ref="someFilter"/>
+	        </util:map>
+	    </property> -->
+	    <property name="filterChainDefinitions">
+	        <value>
+	            # some example chain definitions:
+	            /admin/** = authc, roles[admin]
+	            /docs/** = authc, perms[document:read]
+	            # more URL-to-FilterChain definitions here
+	        </value>
+	    </property>
+	</bean>
+		
+		
+</beans>
